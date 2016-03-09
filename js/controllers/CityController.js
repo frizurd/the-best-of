@@ -1,5 +1,5 @@
-app.controller('MainController', function($scope, $routeParams){
-	
+app.controller('CityController', function($scope, $routeParams, forecast){
+	$scope.oops = 'oops';
 	forecast.success(function(data) { 
 		$scope.fiveDay = data; 
 	});

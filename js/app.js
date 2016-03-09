@@ -8,7 +8,7 @@ app.config(function($routeProvider){
 			templateUrl: "views/home.html"
 		})
 		.when('/cities', {
-			controller: "CitiesController",
+			controller: "CityController",
 			templateUrl: "views/cities.html"
 		})
 		.otherwise({
