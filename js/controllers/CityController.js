@@ -1,7 +1,7 @@
 app.controller('CityController', function($scope, $routeParams, forecast){
 	$scope.oops = 'oops';
 	forecast.success(function(data) { 
-		$scope.fiveDay = data; 
+		$scope.cities = data; 
 	});
 
 });
