@@ -1,8 +1,5 @@
 app.controller('MainController', function($scope, $routeParams, $http){
 
-  $scope.currFood = [];
-  $scope.currCity = [];
-
   $scope.foodID = $routeParams.food;
   $scope.cityID = $routeParams.city;
 
@@ -28,5 +25,6 @@ app.controller('MainController', function($scope, $routeParams, $http){
   $scope.setCity = function(city) {
     $scope.currCity = city;
   };
+
 
 });
