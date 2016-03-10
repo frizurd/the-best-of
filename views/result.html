@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 <!-- Default panel contents -->
-<div class="panel-heading">The Best <strong>{{ curFood }}</strong> Of <strong>{{ curCity }}</strong></div>
+<div class="panel-heading">The Best <strong>{{ foodID }}</strong> Of <strong>{{ cityID }}</strong></div>
 
 <!-- Table -->
 <table class="table">
@@ -13,17 +13,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
+    <tr ng-repeat="resi in restaurants">
+      <th scope="row">{{$index + 1}}</th>
       <td>Mark</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
+      <td>Mark</td>
+      <td>Mark</td>
     </tr>
   </tbody>
 </table>

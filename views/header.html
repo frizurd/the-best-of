@@ -8,14 +8,19 @@
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button"
                           id="foodMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    {{ searchFood }}
+
+                          <span ng-if="!currFood.Name">
+                            Food
+                          </span>
+                          <span ng-if="currFood.Name">
+                            {{ currFood.Name }}
+                          </span>
+
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="foodMenu" ng-click="cityDrop=true">
                     <li ng-repeat="food in foods" class="dropdown-item">
-                      <span ng-click="currentFood(food.Name)">
-                        {{ food.Name }}
-                      </span>
+                        <a ng-click="setFood(food)" ng-href="">{{ food.Name }}</a>
                     </li>
                   </ul>
                 </div>
@@ -26,12 +31,19 @@
                   <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button"
                             id="cityMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      {{ searchCity }}
+
+                            <span ng-if="!currCity.Name">
+                              City
+                            </span>
+                            <span ng-if="currCity.Name">
+                              {{ currCity.Name }}
+                            </span>
+
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="cityMenu">
                       <li ng-repeat="city in cities" class="dropdown-item">
-                        <a ng-click="currentCity(city.Name)" ng-href="/#/search/{{searchFood+'/'+city.Name}}">
+                        <a ng-click="setCity(city)" ng-href="/#/restaurants/{{currFood.FoodID+'/'+city.CityID}}">
                           {{ city.Name }}
                         </a>
                       </li>
@@ -45,3 +57,4 @@
         </div>
     </div>
 </div>
+<div id="overlay"></div>
