@@ -57,10 +57,13 @@
                         <a href="/#/">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                      <a href="/#/cities">Cities</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                      <a href="/#/restaurants">Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
                     </li>
                 </ul>
             </div>
@@ -79,11 +82,9 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1">
 
                   <div ng-view></div>
 
-                </div>
             </div>
         </div>
     </article>
@@ -143,8 +144,12 @@
   	<script src="js/app.js"></script>
   	<script src="js/controllers/MainController.js"></script>
     <script src="js/controllers/RatingController.js"></script>
+    <script src="js/controllers/RestaurantController.js"></script>
 	  <script src="js/controllers/CityController.js"></script>
+	  <script src="js/controllers/InstagramController.js"></script>
+
 		<script src="js/services/cities.js"></script>
+		<script src="js/services/instagram.js"></script>
 </body>
 
 </html>
