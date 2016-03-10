@@ -1,24 +1,46 @@
-<div class="panel panel-default">
+<div class="panel panel-default"  ng-show="!!restaurants.length">
 <!-- Default panel contents -->
-<div class="panel-heading">The Best <strong>{{ currFood.Name }}</strong> Of <strong>{{ currCity.Name }}</strong></div>
 
-<!-- Table -->
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Restaurant</th>
-      <th>Rating</th>
-      <th>*</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="resi in restaurants">
-      <th scope="row">{{$index + 1}}</th>
-      <td>Mark</td>
-      <td>Mark</td>
-      <td>Mark</td>
-    </tr>
-  </tbody>
-</table>
+
+  <div class="col-md-8">
+  <div class="panel-heading">The Best <u><strong>{{ currFood.Name }}</strong></u> Of <u><strong>{{ currCity.Name }}</strong></u></div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Restaurant</th>
+        <th>Rating</th>
+        <th>*</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="resi in restaurants">
+        <th scope="row">{{$index + 1}}</th>
+        <td>{{resi.Name}}</td>
+        <td>{{resi.Rating}}</td>
+        <td>Mark</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="col-md-4" ng-controller="InstagramController">
+
+
+      <div ng-repeat="item in imgs">
+        <a href="{{item.link}}" target="_blank">
+          <img ng-src="{{item.images.low_resolution.url}}" title="{{item.caption.text}}">
+         </a>
+      </div>
+
+  </div>
+  
+</div>
+
+<div class="panel panel-default"  ng-show="!restaurants.length">
+  <center>
+    <h1>Oooops, no restaurants found!</h1>
+  </center>
 </div>

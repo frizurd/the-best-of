@@ -11,13 +11,13 @@ app.controller('RatingController', function($scope, $routeParams, $http){
     });
   };
 
-  $scope.getWeather = function(name){
-    $http.get("http://api.openweathermap.org/data/2.5/weather?q="+name+"&APPID=0a428b5c38663d2e228b963da361ab22")
-    .then(function (response){
-      $scope.weathers = response.data;
-      console.log($scope.weathers);
-    });
-  };
+  // $scope.getWeather = function(name){
+  //   $http.get("http://api.openweathermap.org/data/2.5/weather?q="+name+"&APPID=0a428b5c38663d2e228b963da361ab22")
+  //   .then(function (response){
+  //     $scope.weathers = response.data;
+  //     console.log($scope.weathers);
+  //   });
+  // };
 
 });
 

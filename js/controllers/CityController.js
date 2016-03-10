@@ -30,4 +30,6 @@ app.controller('CityController', function($scope, $routeParams, cities,$http){
 	}, function errorCallback(response) {
 
 	});
- }
+};
+
+});
