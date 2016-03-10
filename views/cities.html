@@ -28,30 +28,36 @@
 		<tr ng-repeat="city in cities">
 		  <th scope="row">{{city.CityID}}</th>
 		  <td>{{city.Name}}</td>
-		  <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Edit</button></td>
-		  <td><button type="button" class="btn btn-danger" ng-click="deleteCity(city.CityID)">Delete</button></td>
+		  <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" ng-click="saveSelectedCity(city.CityID, city.Name)">Edit</button></td>
+		  <td><button type="button" class="btn btn-danger" ng-click="deleteCity(city.CityID, $index)">Delete</button></td>
 		</tr>
 	  </tbody>
 	</table>
-</div>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Modal Header</h4>
+	      </div>
+	      <div class="modal-body">
+					<div class="form-group">
+	  <label for="usr">Name:</label>
+	  <input type="text" value="{{selectedName}}" class="form-control" ng-model="selectedName">
+	</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-  </div>
+
+	        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="updateCity(selectedId)">Save</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
 </div>
