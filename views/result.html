@@ -27,6 +27,7 @@
   </div>
 
   <div class="col-md-4" ng-controller="InstagramController">
+    <div class="panel-heading"><u><strong>#{{ currFood.Name }}</strong></u> on Instagram</div>
 
 
       <div ng-repeat="item in imgs">
@@ -36,7 +37,7 @@
       </div>
 
   </div>
-  
+
 </div>
 
 <div class="panel panel-default"  ng-show="!restaurants.length">
