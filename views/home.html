@@ -1,6 +1,6 @@
-<button class="btn btn-success">New restaurant</button>{{getWeather}}
+<button class="btn btn-success">New restaurant</button>
 
- <div class="panel panel-default" ng-controller="RatingController">
+ <div class="panel panel-default">
    <!-- Default panel contents -->
    <div class="panel-heading">THE BEST OF {{food}}</div>
 
@@ -22,13 +22,6 @@
          <td>{{r.Rating}}</td>
          <td><button type="button" class="btn btn-primary">Edit</button></td>
          <td><button type="button" class="btn btn-danger">Delete</button></td>
-       </tr>
-       <tr ng-repeat="w in weathers">
-         <td>{{w.wind}}</td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
        </tr>
      </tbody>
    </table>
