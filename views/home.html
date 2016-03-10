@@ -1,36 +1,35 @@
-                    <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">THE BEST OF >getFOOD<</div>
+<button class="btn btn-success">New restaurant</button>
 
-                    <!-- Table -->
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Restaurant</th>
-                          <th>Rating</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td><button type="button" class="btn btn-primary">Edit</button></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+ <div class="panel panel-default" ng-controller="RatingController">
+   <!-- Default panel contents -->
+   <div class="panel-heading">THE BEST OF {{food}}</div>
+
+   <!-- Table -->
+   <table class="table">
+     <thead>
+       <tr>
+         <th>#</th>
+         <th>Restaurant</th>
+         <th>Rating</th>
+         <th></th>
+         <th></th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr ng-repeat="r in ratings">
+         <th scope="row">{{r.RestaurantID}}</th>
+         <td>{{r.FoodID}}</td>
+         <td>{{r.Rating}}</td>
+         <td><button type="button" class="btn btn-primary">Edit</button></td>
+         <td><button type="button" class="btn btn-danger">Delete</button></td>
+       </tr>
+       <tr ng-repeat="w in weathers">
+         <td>{{w.wind}}</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+       </tr>
+     </tbody>
+   </table>
+</div>
