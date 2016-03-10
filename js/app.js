@@ -1,15 +1,15 @@
 var app = angular.module('singleApp', ['ngRoute']);
 
-app.config(function($routeProvider){
-	
+app.config(function($routeProvider, $locationProvider){
+
 	$routeProvider
 		.when('/', {
 			controller: "MainController",
 			templateUrl: "views/home.html"
 		})
-		.when('/quotes/:id', {
+		.when('/search/:food/:city', {
 			controller: "MainController",
-			templateUrl: "views/detail.html"
+			templateUrl: "views/result.html"
 		})
 		.when('/about', {
 			controller: "DetailController",
