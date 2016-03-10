@@ -1,0 +1,26 @@
+<button class="btn btn-success">New restaurant</button>
+
+ <div class="panel panel-default" ng-controller="RestaurantController">
+   <!-- Default panel contents -->
+   <div class="panel-heading">Restaurants</div>
+
+   <!-- Table -->
+   <table class="table">
+     <thead>
+       <tr>
+         <th>#</th>
+         <th>Restaurant</th>
+         <th></th>
+         <th></th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr ng-repeat="r in restaurants">
+         <th scope="row">{{r.RestaurantID}}</th>
+         <td>{{r.Name}}</td>
+         <td><button type="button" class="btn btn-primary">Edit</button></td>
+         <td><button type="button" class="btn btn-danger">Delete</button></td>
+       </tr>
+     </tbody>
+   </table>
+</div>
