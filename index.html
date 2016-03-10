@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="singleApp">
 
 <head>
 
@@ -33,10 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
 </head>
 
-<body ng-app="singleApp">
+<body ng-controller="MainController">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -72,44 +71,8 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/burger-bg.jpg'); opacity: 1;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1 style="text-align: center;">The Best
-
-
-                        <div class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Food
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                          </ul>
-                        </div>
-                        Of
-                        <div class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            City
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                          </ul>
-                        </div>
-
-                        </h1>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="intro-header" style="background-image: url('img/burger-bg.jpg')"
+            ng-include src="'views/header.html'">
     </header>
 
     <!-- Post Content -->
@@ -178,12 +141,10 @@
 
   	<!--Modules-->
   	<script src="js/app.js"></script>
-
   	<script src="js/controllers/MainController.js"></script>
-	<script src="js/controllers/CityController.js"></script>
-	
-	<script src="js/services/cities.js"></script>
-    
+
+	  <script src="js/controllers/CityController.js"></script>
+		<script src="js/services/cities.js"></script>
 </body>
 
 </html>

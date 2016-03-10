@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+                <h1 style="text-align: center;">The Best
+
+
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button"
+                          id="foodMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{ searchFood }}
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="foodMenu" ng-click="cityDrop=true">
+                    <li ng-repeat="food in foods" class="dropdown-item">
+                      <span ng-click="currentFood(food.Name)">
+                        {{ food.Name }}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+
+                <div class="city-dropdown" ng-show="cityDrop">
+                  Of
+                  <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button"
+                            id="cityMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      {{ searchCity }}
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="cityMenu">
+                      <li ng-repeat="city in cities" class="dropdown-item">
+                        <a ng-click="currentCity(city.Name)" ng-href="/#/search/{{searchFood+'/'+city.Name}}">
+                          {{ city.Name }}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                </h1>
+
+            </div>
+        </div>
+    </div>
+</div>
