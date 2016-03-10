@@ -1,10 +1,10 @@
 app.controller('MainController', function($scope, $routeParams, $http){
 
-  $scope.searchFood = "Food";
-  $scope.searchCity = "City";
+  $scope.currFood = [];
+  $scope.currCity = [];
 
-  $scope.curFood = $routeParams.food;
-  $scope.curCity = $routeParams.city;
+  $scope.foodID = $routeParams.food;
+  $scope.cityID = $routeParams.city;
 
   $http.get('http://topoftheline.azurewebsites.net/api/cities')
   .then(function(response) {
@@ -16,16 +16,17 @@ app.controller('MainController', function($scope, $routeParams, $http){
     $scope.foods = response.data;
   });
 
-  $scope.currentFood = function(name) {
-    $scope.searchFood = name;
+  $http.get('http://topoftheline.azurewebsites.net/api/restaurants/'+ $scope.foodID + '/' +$scope.cityID)
+  .then(function(response) {
+    $scope.restaurants = response.data;
+  });
+
+  $scope.setFood = function(food) {
+    $scope.currFood = food;
   };
 
-  $scope.currentCity = function(name) {
-    $scope.searchCity = name;
-  };
-
-  $scope.link = function (path) {
-    $location.path(path);
+  $scope.setCity = function(city) {
+    $scope.currCity = city;
   };
 
 });

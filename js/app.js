@@ -7,7 +7,7 @@ app.config(function($routeProvider, $locationProvider){
 			controller: "MainController",
 			templateUrl: "views/home.html"
 		})
-		.when('/search/:food/:city', {
+		.when('/restaurants/:food/:city', {
 			controller: "MainController",
 			templateUrl: "views/result.html"
 		})
