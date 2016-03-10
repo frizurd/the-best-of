@@ -1,8 +1,8 @@
 <button class="btn btn-success">New restaurant</button>
 
- <div class="panel panel-default" ng-controller="RatingController">
+ <div class="panel panel-default" ng-controller="RestaurantController">
    <!-- Default panel contents -->
-   <div class="panel-heading">THE BEST OF {{food}}</div>
+   <div class="panel-heading">Restaurants</div>
 
    <!-- Table -->
    <table class="table">
@@ -10,25 +10,16 @@
        <tr>
          <th>#</th>
          <th>Restaurant</th>
-         <th>Rating</th>
          <th></th>
          <th></th>
        </tr>
      </thead>
      <tbody>
-       <tr ng-repeat="r in ratings">
+       <tr ng-repeat="r in restaurants">
          <th scope="row">{{r.RestaurantID}}</th>
-         <td>{{r.FoodID}}</td>
-         <td>{{r.Rating}}</td>
+         <td>{{r.Name}}</td>
          <td><button type="button" class="btn btn-primary">Edit</button></td>
          <td><button type="button" class="btn btn-danger">Delete</button></td>
-       </tr>
-       <tr ng-repeat="w in weathers">
-         <td>{{w.wind}}</td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
        </tr>
      </tbody>
    </table>

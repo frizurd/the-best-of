@@ -19,6 +19,10 @@ app.config(function($routeProvider, $locationProvider){
 			controller: "CityController",
 			templateUrl: "views/cities.html"
 		})
+		.when('/restaurants', {
+			controller: "RestaurantController",
+			templateUrl: "views/restaurants.html"
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
